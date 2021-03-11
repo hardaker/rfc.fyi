@@ -9,6 +9,7 @@ json_records = get_json(open("rfc-index.xml"))
 stream_rfcs = defaultdict(list)
 
 for item in json_records:
-    stream_rfcs[json_records[item]['stream']].append(item)
+    tag = "stream:" + json_records[item]['stream']
+    stream_rfcs[tag].append(item)
 
 print(json.dumps(stream_rfcs, indent=1, sort_keys=True))
