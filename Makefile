@@ -22,3 +22,8 @@ lint: client.js util.js
 .PHONY: clean
 clean:
 	rm -f rfcs.json rfcs.json.gz
+
+.PHONY: update-streams
+update-streams:
+	PYTHONPATH=. generators/stream-extractors.py -m tags.json 
+
