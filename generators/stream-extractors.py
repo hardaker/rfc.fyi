@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Reads an RFC index and outputs a list of RFCs per stream"""
 
 import json
