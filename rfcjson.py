@@ -90,16 +90,16 @@ def fixup(raw):
     return output
 
 
-def get_json():
+def get_json(file_handle):
     parser = xml.sax.make_parser()
     handler = RfcIndexHandler()
     parser.setContentHandler(handler)
-    parser.parse(fh)
+    parser.parse(file_handle)
     return fixup(handler.output)
 
 
 def main():
-    print(json.dumps(get_json(), indent=1, sort_keys=True))
+    print(json.dumps(get_json(fh), indent=1, sort_keys=True))
 
 
 if __name__ == "__main__":
